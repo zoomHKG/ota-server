@@ -1,4 +1,4 @@
-# Iot App Server
+# Iot App Server [![Build Status](https://travis-ci.org/zoomHKG/iot-server.svg?branch=master)](https://travis-ci.org/zoomHKG/iot-server)
 
 blah blah blah...
 
