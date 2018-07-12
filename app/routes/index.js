@@ -1,6 +1,6 @@
-module.exports = function(app){
+module.exports = function (app) {
   app.route('*')
     .get((req, res) => {
-      res.render('index');
-    });
+      res.render('index')
+    })
 }
