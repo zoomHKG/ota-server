@@ -2,7 +2,11 @@
 
 blah blah blah...
 
-## Development
+## Contributing
+
+* Fork this repository
+* Push your changes on your repository
+* Send a Pull Request
 
 ### Coding Standard
 
@@ -12,8 +16,12 @@ Plugins are available for various IDEs.
 
 Not a fan of 'No semicolons' but WTH, lets try not using semicolons for a change.
 
-### Contributing
+## Running Server
 
-* Fork this repository
-* Push your changes on your repository
-* Send a Pull Request
+### Development
+
+* `npm run dev`
+
+### Production
+
+* `npm start`
