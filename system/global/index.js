@@ -6,7 +6,8 @@ global.xWorkDir = app.rootPath
 function init () {
   if (!global.appObjectStore) {
     global.appObjectStore = {
-      logger: {}
+      logger: {},
+      repo: null
     }
   }
 }
