@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=production PORT=80 pm2 start system/server/index.js -i max && pm2 logs all",
+    "start": "cross-env NODE_ENV=production pm2 start system/server/index.js -i max && pm2 logs all",
     "stop": "pm2 stop system/server/index.js",
     "monit": "pm2 monit",
     "dev": "cross-env NODE_ENV=development && nodemon system/server",
