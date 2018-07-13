@@ -6,5 +6,14 @@ blah blah blah...
 
 ### Coding Standard
 
-Lets follow the style guide from [standard](https://github.com/standard/standard). Plugins are available for various IDEs.
+Lets follow the style guide from [standard](https://github.com/standard/standard).
+
+Plugins are available for various IDEs.
+
 Not a fan of 'No semicolons' but WTH, lets try not using semicolons for a change.
+
+### Contributing
+
+* Fork this repository
+* Push your changes on your repository
+* Send a Pull Request
