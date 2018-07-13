@@ -20,8 +20,12 @@ Not a fan of 'No semicolons' but WTH, lets try not using semicolons for a change
 
 ### Development
 
-* `npm run dev`
+```shell
+npm run dev
+```
 
 ### Production
 
-* `npm start`
+```shell
+npm start
+```
