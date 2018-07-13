@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "cross-env NODE_ENV=production PORT=8080 node app.js",
+    "dev": "cross-env NODE_ENV=development && nodemon app.js",
     "test": "standard && mocha"
   },
   "repository": {
@@ -23,10 +25,24 @@
     "morgan": "^1.9.0"
   },
   "devDependencies": {
+    "cross-env": "^5.2.0",
     "mocha": "^5.2.0",
+    "nodemon": "^1.18.1",
     "standard": "^11.0.1"
   },
   "standard": {
-    "env": ["mocha"]
+    "env": [
+      "mocha"
+    ]
+  },
+  "nodemonConfig": {
+    "verbose": false,
+    "watch": [
+      "app/"
+    ],
+    "ignore": [
+      "test/"
+    ],
+    "ext": "js json"
   }
 }
