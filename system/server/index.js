@@ -23,11 +23,17 @@ routes(app)
 
 const server = {
   start: function start () {
-    const httpServer = http.createServer(app)
-    httpServer.listen(serverConfig.port, serverConfig.ip)
+    this.httpServer = http.createServer(app)
+    this.httpServer.listen(serverConfig.port, serverConfig.ip)
 
     logger.info(`Server running at https://localhost:${serverConfig.port}`)
-  }
+  },
+  stop: function () {
+    this.httpServer.close()
+  },
+  httpServer: null
 }
 
 server.start()
+
+module.exports = server
