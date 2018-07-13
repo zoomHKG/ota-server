@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=production PORT=8080 node app.js",
-    "dev": "cross-env NODE_ENV=development && nodemon app.js",
+    "start": "cross-env NODE_ENV=production PORT=8080 node system/server",
+    "dev": "cross-env NODE_ENV=development && nodemon system/server",
     "test": "standard && mocha"
   },
   "repository": {
@@ -19,10 +19,12 @@
   },
   "homepage": "https://github.com/zoomHKG/iot-server#readme",
   "dependencies": {
+    "compression": "^1.7.2",
     "ejs": "^2.6.1",
     "express": "^4.16.3",
     "mongoose": "^5.2.3",
-    "morgan": "^1.9.0"
+    "morgan": "^1.9.0",
+    "winston": "^3.0.0"
   },
   "devDependencies": {
     "cross-env": "^5.2.0",
@@ -38,11 +40,12 @@
   "nodemonConfig": {
     "verbose": false,
     "watch": [
-      "app/"
+      "src/",
+      "system/",
+      "config/"
     ],
     "ignore": [
       "test/"
-    ],
-    "ext": "js json"
+    ]
   }
 }
