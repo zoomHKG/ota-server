@@ -2,18 +2,30 @@
 
 blah blah blah...
 
-## Development
-
-### Coding Standard
-
-Lets follow the style guide from [standard](https://github.com/standard/standard).
-
-Plugins are available for various IDEs.
-
-Not a fan of 'No semicolons' but WTH, lets try not using semicolons for a change.
-
-### Contributing
+## Contributing
 
 * Fork this repository
 * Push your changes on your repository
 * Send a Pull Request
+
+### Coding Standard
+
+Lets follow the style guide from [standard](https://github.com/standard/standard#standardjs-the-rules).
+
+Plugins are available for various IDEs.
+
+Not a fan of **"No semicolons"** but WTH, lets try not using semicolons for a change.
+
+### Running App
+
+#### Development
+
+```shell
+npm run dev
+```
+
+#### Production
+
+```shell
+npm start
+```
