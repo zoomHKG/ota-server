@@ -10,7 +10,7 @@ blah blah blah...
 
 ### Coding Standard
 
-Lets follow the style guide from [standard](https://github.com/standard/standard).
+Lets follow the style guide from [standard](https://github.com/standard/standard#standardjs-the-rules).
 
 Plugins are available for various IDEs.
 
