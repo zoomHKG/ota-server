@@ -1,6 +1,6 @@
-# IoT App Server [![Build Status](https://travis-ci.org/zoomHKG/iot-server.svg?branch=master)](https://travis-ci.org/zoomHKG/iot-server)
+# OTA Server [![Build Status](https://travis-ci.org/zoomHKG/ota-server.svg?branch=master)](https://travis-ci.org/zoomHKG/ota-server)
 
-blah blah blah...
+OTA Server for IoT Apps
 
 ## Contributing
 

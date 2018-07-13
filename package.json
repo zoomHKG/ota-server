@@ -1,5 +1,5 @@
 {
-  "name": "iot-server",
+  "name": "ota-server",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zoomHKG/iot-server.git"
+    "url": "git+https://github.com/zoomHKG/ota-server.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/zoomHKG/iot-server/issues"
+    "url": "https://github.com/zoomHKG/ota-server/issues"
   },
-  "homepage": "https://github.com/zoomHKG/iot-server#readme",
+  "homepage": "https://github.com/zoomHKG/ota-server#readme",
   "dependencies": {
     "chai": "^4.1.2",
     "chai-as-promised": "^7.1.1",
