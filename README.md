@@ -16,15 +16,15 @@ Plugins are available for various IDEs.
 
 Not a fan of 'No semicolons' but WTH, lets try not using semicolons for a change.
 
-## Running Server
+### Running App
 
-### Development
+#### Development
 
 ```shell
 npm run dev
 ```
 
-### Production
+#### Production
 
 ```shell
 npm start
