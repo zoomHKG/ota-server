@@ -15,3 +15,20 @@ exports.getApp = (req, res) => {
     data: repo.getProject(req.params.project)
   })
 }
+
+exports.update = (req, res) => {
+  repo
+    .update()
+    .then(data => {
+      res.send({
+        success: true,
+        data
+      })
+    })
+    .catch(error => {
+      res.send({
+        success: false,
+        error
+      })
+    })
+}
