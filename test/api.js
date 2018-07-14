@@ -12,7 +12,7 @@ chai.use(promised)
 let app
 let api
 const status = '/api/status'
-const testRepo = '/api/repo/test'
+const repo = '/api/repo'
 
 describe('API Tests', () => {
   before(() => {
@@ -65,7 +65,7 @@ describe('API Tests', () => {
     it('should return test project', (done) => {
       chai
         .request(api)
-        .get(testRepo)
+        .get(`${repo}/project/test`)
         .then(res => {
           expect(res).to.have.status(200)
           // chai.assert.isObject(res.body, 'Body should be an Object')
