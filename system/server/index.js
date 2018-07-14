@@ -11,7 +11,6 @@ const system = require('../index.js')
 
 const logger = system.getLogger()
 const repo = system.getRepo()
-
 let serverConfig
 
 if (production) {
@@ -39,7 +38,7 @@ const server = {
 module.exports = new Promise((resolve, reject) => {
   repo
     .update()
-    .then(() => {
+    .then((data) => {
       logger.info('Repository Loaded')
       server.start()
       resolve(server)
