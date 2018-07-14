@@ -48,6 +48,17 @@ describe('API Tests', () => {
           done()
         })
     })
+    it('should return CPU Arrays', (done) => {
+      chai
+        .request(api)
+        .get(`${status}/cpus`)
+        .then(res => {
+          expect(res).to.have.status(200)
+          expect(res.body).to.be.an('object')
+          expect(res.body.data).to.be.an('array')
+          done()
+        })
+    })
   })
 
   describe('API endpoints /repo', () => {

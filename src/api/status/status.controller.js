@@ -6,3 +6,10 @@ exports.getCpuInfo = (req, res) => {
     data: os.cpus()
   })
 }
+
+exports.status = (req, res) => {
+  res.send({
+    success: true,
+    data: 'OK'
+  })
+}
