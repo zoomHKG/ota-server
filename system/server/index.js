@@ -38,7 +38,7 @@ const server = {
 module.exports = new Promise((resolve, reject) => {
   repo
     .update()
-    .then((data) => {
+    .then(() => {
       logger.info('Repository Loaded')
       server.start()
       resolve(server)
