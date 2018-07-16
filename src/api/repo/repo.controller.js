@@ -20,14 +20,14 @@ exports.getApps = (req, res) => {
  * }
  */
 exports.getApp = (req, res) => {
-  console.log(`Headers : ${JSON.stringify(req.headers, 2, null)}`)
-  console.log(`version : ${req.headers['x-esp8266-version']}`)
+  // console.log(`Headers : ${JSON.stringify(req.headers, 2, null)}`)
+  // console.log(`version : ${req.headers['x-esp8266-version']}`)
   const proj = repo.getProject(req.params.project)
   if (proj) {
     if (proj.device === 'esp8266') {
       const version = req.headers['x-esp8266-version'] || 'v0.0.0'
       if (proj.version > version) {
-        console.log('Update Necessary')
+        // console.log('Update Necessary')
       }
     }
     res.send({
