@@ -1,6 +1,8 @@
 const system = require('../../../system')
-const repo = system.getRepo()
 const rp = require('request-promise')
+const eh = require('../../utils')
+
+const repo = system.getRepo()
 
 exports.getApp = (req, res) => {
   const proj = repo.getProject(req.params.project)
@@ -24,7 +26,7 @@ exports.getApp = (req, res) => {
           res.send(Buffer.alloc(dat.length, dat, 'binary'))
         })
         .catch(err => {
-          console.log(err)
+          eh.handleError(err)
         })
     }
   } else {
