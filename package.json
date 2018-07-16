@@ -33,6 +33,7 @@
     "pm2": "^3.0.0",
     "request": "^2.87.0",
     "request-promise": "^4.2.2",
+    "swagger-jsdoc": "^1.9.7",
     "winston": "^3.0.0"
   },
   "devDependencies": {
