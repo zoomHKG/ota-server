@@ -16,14 +16,12 @@ class Repository {
         .then(res => {
           try {
             this.repo = JSON.parse(res)
-            resolve('Repository Updated Successfully')
+            resolve(this.repo)
           } catch (err) {
             reject(err)
           }
         })
         .catch(err => {
-          // logger.error(err.message)
-          // reject(new Error('Repository Update Failed').message)
           reject(err)
         })
     })
