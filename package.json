@@ -8,7 +8,9 @@
     "stop": "pm2 stop system/server/index.js",
     "monit": "pm2 monit",
     "dev": "cross-env NODE_ENV=development && nodemon system/server",
-    "test": "standard && istanbul cover node_modules/mocha/bin/mocha test/api.js --report lcovonly"
+    "test": "standard && mocha",
+    "coverage": "istanbul cover _mocha test/ -x *.test.js",
+    "showcoverage": "xdg-open coverage/lcov-report/index.html"
   },
   "repository": {
     "type": "git",
