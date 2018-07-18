@@ -1,4 +1,4 @@
-# OTA Server [![Build Status](https://travis-ci.org/zoomHKG/ota-server.svg?branch=master)](https://travis-ci.org/zoomHKG/ota-server)
+# OTA Server [![Build Status](https://travis-ci.org/zoomHKG/ota-server.svg?branch=master)](https://travis-ci.org/zoomHKG/ota-server) [![Coverage Status](https://coveralls.io/repos/github/zoomHKG/ota-server/badge.svg?branch=master)](https://coveralls.io/github/zoomHKG/ota-server?branch=master)
 
 OTA Server for IoT Apps
 
