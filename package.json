@@ -8,9 +8,9 @@
     "stop": "pm2 stop system/server/index.js",
     "monit": "pm2 monit",
     "dev": "cross-env NODE_ENV=development && nodemon system/server",
-    "test": "standard && mocha",
-    "coverage": "istanbul cover _mocha test/ -x *.test.js",
-    "showcoverage": "xdg-open coverage/lcov-report/index.html"
+    "test": "standard && mocha --recursive test",
+    "test:coverage": "standard && istanbul cover _mocha test --recursive --report lcovonly",
+    "codecov": "cat coverage/lcov.info | codecov"
   },
   "repository": {
     "type": "git",
@@ -39,6 +39,7 @@
     "winston": "^3.0.0"
   },
   "devDependencies": {
+    "codecov": "^3.0.4",
     "cross-env": "^5.2.0",
     "istanbul": "^0.4.5",
     "mocha": "^5.2.0",
