@@ -70,7 +70,7 @@ describe('#API', () => {
         .then(res => {
           expect(res).to.have.status(200)
           expect(res.body).to.be.an('object')
-          expect(res.body.success).to.be.eq(true)
+          expect(res.body.data).to.be.an('object')
           done()
         })
     })
