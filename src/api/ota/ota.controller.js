@@ -39,7 +39,6 @@ exports.getApp = (req, res) => {
         .catch(err => {
           eh.handleError(err)
           res.send({
-            success: false,
             error: {
               code: 404,
               message: 'Cannot fetch app binary'
@@ -49,7 +48,6 @@ exports.getApp = (req, res) => {
     }
   } else {
     res.send({
-      success: false,
       error: {
         code: 401,
         message: 'Project not found'
