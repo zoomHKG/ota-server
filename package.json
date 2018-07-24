@@ -24,6 +24,7 @@
   "homepage": "https://github.com/zoomHKG/ota-server#readme",
   "dependencies": {
     "apidoc": "^0.17.6",
+    "boom": "^7.2.0",
     "chai": "^4.1.2",
     "chai-as-promised": "^7.1.1",
     "chai-http": "^4.0.0",

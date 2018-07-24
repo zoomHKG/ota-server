@@ -28,8 +28,13 @@ function newError (err) {
   // INTERNAL_SERVER_ERROR for all other cases
   return {
     code: httpStatus.INTERNAL_SERVER_ERROR,
-    message: httpStatus.getStatusText(httpStatus.INTERNAL_SERVER_ERROR)
+    message: httpStatus.getStatusText(httpStatus.INTERNAL_SERVER_ERROR),
+    details:
+      err.message &&
+      {
+        message: err.message
+      }
   }
 }
 
-export default newError
+module.exports = newError

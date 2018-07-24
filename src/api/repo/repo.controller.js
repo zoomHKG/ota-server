@@ -1,4 +1,5 @@
 const system = require('../../../system')
+const Boom = require('boom')
 
 const repo = system.getRepo()
 
@@ -8,23 +9,18 @@ exports.getApps = (req, res) => {
   })
 }
 
-exports.getApp = (req, res) => {
+exports.getApp = (req, res, next) => {
   const proj = repo.getProject(req.params.project)
   if (proj) {
     res.send({
       data: proj
     })
   } else {
-    res.send({
-      error: {
-        code: 401,
-        message: 'Project not found'
-      }
-    })
+    next(Boom.notFound('Project not found'))
   }
 }
 
-exports.update = (req, res) => {
+exports.update = (req, res, next) => {
   repo
     .update()
     .then(data => {
@@ -33,8 +29,6 @@ exports.update = (req, res) => {
       })
     })
     .catch(error => {
-      res.send({
-        error
-      })
+      next(error)
     })
 }

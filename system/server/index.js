@@ -19,8 +19,8 @@ if (production) {
   serverConfig = config.server.development
 }
 
-middlewares(app)
 routes(app)
+middlewares(app)
 
 const server = {
   start: function start () {
@@ -44,7 +44,7 @@ module.exports = new Promise((resolve, reject) => {
       resolve(server)
     })
     .catch(err => {
-      logger.error(err)
+      logger.error(err.message)
       reject(err)
     })
 })
