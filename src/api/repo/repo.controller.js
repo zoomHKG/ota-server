@@ -4,7 +4,7 @@ const Boom = require('boom')
 const repo = system.getRepo()
 
 exports.getApps = (req, res) => {
-  res.send({
+  res.json({
     data: repo.get()
   })
 }
@@ -12,7 +12,7 @@ exports.getApps = (req, res) => {
 exports.getApp = (req, res, next) => {
   const proj = repo.getProject(req.params.project)
   if (proj) {
-    res.send({
+    res.json({
       data: proj
     })
   } else {
@@ -24,7 +24,7 @@ exports.update = (req, res, next) => {
   repo
     .update()
     .then(data => {
-      res.send({
+      res.json({
         data
       })
     })

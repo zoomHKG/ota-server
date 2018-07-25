@@ -35,7 +35,7 @@ exports.getApp = (req, res, next) => {
         .then(dat => {
           res.set('Content-Type', 'application/octet-stream')
           res.set('Content-Disposition', 'attachment; filename=' + fileName)
-          res.send(Buffer.alloc(dat.length, dat, 'binary'))
+          res.json(Buffer.alloc(dat.length, dat, 'binary'))
         })
         .catch(err => next(err))
     }

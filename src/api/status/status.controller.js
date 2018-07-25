@@ -1,13 +1,13 @@
 const os = require('os')
 
 exports.getCpuInfo = (req, res) => {
-  res.send({
+  res.json({
     data: os.cpus()
   })
 }
 
 exports.status = (req, res) => {
-  res.send({
+  res.json({
     data: 'OK'
   })
 }
