@@ -8,7 +8,6 @@ const app = express()
 const production = process.env.NODE_ENV === 'production'
 
 const middlewares = require('./middlewares')
-const routes = require('./routes')
 const system = require('../index.js')
 
 const logger = system.getLogger()
@@ -24,7 +23,6 @@ if (production) {
 // Load env variables from .env
 dotenv.config()
 
-routes(app)
 middlewares(app)
 
 const server = {

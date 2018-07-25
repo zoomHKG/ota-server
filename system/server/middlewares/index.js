@@ -2,6 +2,7 @@ const compression = require('compression')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const helmet = require('helmet')
+const routes = require('../routes')
 const { methodNotAllowed, genericErrorHandler } = require('./errorHandlers')
 
 module.exports = app => {
@@ -20,6 +21,7 @@ module.exports = app => {
     })
   )
 
+  routes(app)
   // error handlers
   app.use(genericErrorHandler)
   app.use(methodNotAllowed)

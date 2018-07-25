@@ -1,4 +1,6 @@
 const system = require('../../system')
+const error = require('./error')
+const swagger = require('./swagger')
 
 const logger = system.getLogger()
 
@@ -8,4 +10,8 @@ const errorHander = {
   }
 }
 
-module.exports.errorHander = errorHander
+module.exports = {
+  errorHander,
+  swagger,
+  error
+}
