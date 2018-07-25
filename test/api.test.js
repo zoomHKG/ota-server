@@ -95,7 +95,7 @@ describe('#API', () => {
         .get(`${ota}/test`)
         .then(res => {
           expect(res).to.have.status(200)
-          expect(res.headers['content-type']).to.be.eq('application/octet-stream')
+          expect(res.headers['content-type']).to.include('application/octet-stream')
           done()
         })
     })
