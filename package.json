@@ -54,6 +54,9 @@
   "standard": {
     "env": [
       "mocha"
+    ],
+    "ignore": [
+      "public/"
     ]
   },
   "nodemonConfig": {
