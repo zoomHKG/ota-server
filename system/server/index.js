@@ -1,7 +1,7 @@
+require('./env')
 const config = require('../../config')
 const http = require('http')
 const express = require('express')
-const dotenv = require('dotenv')
 
 const app = express()
 
@@ -19,9 +19,6 @@ if (production) {
 } else {
   serverConfig = config.server.development
 }
-
-// Load env variables from .env
-dotenv.config()
 
 middlewares(app)
 

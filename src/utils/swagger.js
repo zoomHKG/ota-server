@@ -9,7 +9,8 @@ const swaggerDefinition = {
     title: process.env.APP_NAME,
     version: process.env.APP_VERSION,
     description: process.env.APP_DESCRIPTION
-  }
+  },
+  basePath: '/api'
 }
 
 /**
