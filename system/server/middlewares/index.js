@@ -1,3 +1,5 @@
+const path = require('path')
+const express = require('express')
 const compression = require('compression')
 const bodyParser = require('body-parser')
 const cors = require('cors')
@@ -20,7 +22,7 @@ module.exports = app => {
       limit: '20mb'
     })
   )
-
+  app.use(express.static(path.join(__dirname, '../../../public')))
   routes(app)
   // error handlers
   app.use(genericErrorHandler)
