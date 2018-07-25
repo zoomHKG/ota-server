@@ -1,6 +1,7 @@
 const compression = require('compression')
 const bodyParser = require('body-parser')
 const cors = require('cors')
+const helmet = require('helmet')
 const { methodNotAllowed, genericErrorHandler } = require('./errorHandlers')
 
 module.exports = app => {
@@ -8,6 +9,7 @@ module.exports = app => {
   app.disable('x-powered-by')
   // Add express stuff
   app.use(compression())
+  app.use(helmet())
   app.use(cors())
   app.use(
     bodyParser.json({
