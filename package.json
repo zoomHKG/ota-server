@@ -30,6 +30,7 @@
     "chai-http": "^4.0.0",
     "compression": "^1.7.2",
     "cors": "^2.8.4",
+    "dotenv": "^6.0.0",
     "ejs": "^2.6.1",
     "express": "^4.16.3",
     "helmet": "^3.13.0",

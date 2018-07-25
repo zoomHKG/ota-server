@@ -5,6 +5,9 @@ const helmet = require('helmet')
 const { methodNotAllowed, genericErrorHandler } = require('./errorHandlers')
 
 module.exports = app => {
+  app.locals.title = process.env.APP_NAME
+  app.locals.version = process.env.APP_VERSION
+
   // remove x-powered-by
   app.disable('x-powered-by')
   // Add express stuff

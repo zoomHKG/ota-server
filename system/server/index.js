@@ -1,6 +1,8 @@
 const config = require('../../config')
 const http = require('http')
 const express = require('express')
+const dotenv = require('dotenv')
+
 const app = express()
 
 const production = process.env.NODE_ENV === 'production'
@@ -18,6 +20,9 @@ if (production) {
 } else {
   serverConfig = config.server.development
 }
+
+// Load env variables from .env
+dotenv.config()
 
 routes(app)
 middlewares(app)
