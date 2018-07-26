@@ -10,14 +10,22 @@ exports.getRepo = () =>
 
 exports.getProjects = () =>
   new Promise((resolve, reject) => {
-    resolve(repo.getProjects())
+    const proj = repo.getProjects()
+    const projects = Object.keys(proj).map(p => ({
+      name: p,
+      ...proj[p]
+    }))
+    resolve(projects)
   })
 
 exports.getProject = (project) =>
   new Promise((resolve, reject) => {
     const proj = repo.getProject(project)
     if (proj) {
-      resolve(proj)
+      resolve({
+        name: project,
+        ...proj
+      })
     } else {
       reject(Boom.notFound('Project not found'))
     }
