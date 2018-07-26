@@ -70,14 +70,14 @@ describe('#API', () => {
         .then(res => {
           expect(res).to.have.status(200)
           expect(res.body).to.be.an('object')
-          expect(res.body.data).to.be.an('object')
+          expect(res.body.data).to.be.an('array')
           done()
         })
     })
     it('should return test project', (done) => {
       chai
         .request(api)
-        .get(`${repo}/project/test`)
+        .get(`${repo}/projects/test`)
         .then(res => {
           expect(res).to.have.status(200)
           // chai.assert.isObject(res.body, 'Body should be an Object')
