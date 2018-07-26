@@ -35,6 +35,12 @@ exports.update = () =>
   new Promise((resolve, reject) => {
     repo
       .update()
-      .then(data => resolve(data))
+      .then(data => {
+        const projects = Object.keys(data).map(p => ({
+          name: p,
+          ...data[p]
+        }))
+        resolve(projects)
+      })
       .catch(err => reject(err))
   })
