@@ -30,8 +30,6 @@ const router = express.Router()
  *       200:
  *         description: Application and API version
  *         schema:
- *           title: Users
- *           type: object
  *           $ref: '#/definitions/App'
  */
 router.get('/', (req, res) => {
