@@ -22,7 +22,8 @@ const swaggerOptions = {
     path.join(__dirname, '/../api/index.js'),
     path.join(__dirname, '/../api/ota/index.js'),
     path.join(__dirname, '/../api/repo/index.js'),
-    path.join(__dirname, '/../api/status/index.js')
+    path.join(__dirname, '/../api/status/index.js'),
+    path.join(__dirname, '/../docs/*.yaml')
   ]
 }
 

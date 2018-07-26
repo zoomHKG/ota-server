@@ -3,32 +3,30 @@ const Boom = require('boom')
 
 const repo = system.getRepo()
 
-exports.getApps = (req, res) => {
-  res.json({
-    data: repo.get()
+exports.getRepo = () =>
+  new Promise((resolve, reject) => {
+    resolve(repo.get())
   })
-}
 
-exports.getApp = (req, res, next) => {
-  const proj = repo.getProject(req.params.project)
-  if (proj) {
-    res.json({
-      data: proj
-    })
-  } else {
-    next(Boom.notFound('Project not found'))
-  }
-}
+exports.getProjects = () =>
+  new Promise((resolve, reject) => {
+    resolve(repo.getProjects())
+  })
 
-exports.update = (req, res, next) => {
-  repo
-    .update()
-    .then(data => {
-      res.json({
-        data
-      })
-    })
-    .catch(error => {
-      next(error)
-    })
-}
+exports.getProject = (project) =>
+  new Promise((resolve, reject) => {
+    const proj = repo.getProject(project)
+    if (proj) {
+      resolve(proj)
+    } else {
+      reject(Boom.notFound('Project not found'))
+    }
+  })
+
+exports.update = () =>
+  new Promise((resolve, reject) => {
+    repo
+      .update()
+      .then(data => resolve(data))
+      .catch(err => reject(err))
+  })

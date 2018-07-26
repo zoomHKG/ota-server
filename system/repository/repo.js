@@ -7,7 +7,7 @@ const rp = require('request-promise')
 class Repository {
   constructor (props) {
     this.props = props
-    this.repo = null
+    this.projects = null
   }
 
   update () {
@@ -15,8 +15,8 @@ class Repository {
       rp(repository.url)
         .then(res => {
           try {
-            this.repo = JSON.parse(res)
-            resolve(this.repo)
+            this.projects = JSON.parse(res)
+            resolve(this.projects)
           } catch (err) {
             reject(err)
           }
@@ -28,12 +28,16 @@ class Repository {
   }
 
   get () {
-    return this.repo
+    return repository
+  }
+
+  getProjects () {
+    return this.projects
   }
 
   getProject (project) {
-    if (this.repo) {
-      return this.repo[project]
+    if (this.projects) {
+      return this.projects[project]
     }
   }
 }

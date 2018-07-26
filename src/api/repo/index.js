@@ -3,9 +3,48 @@ const repo = require('./repo.controller')
 
 const router = express.Router()
 
-router.get('/', repo.getApps)
-router.get('/list', repo.getApps)
-router.get('/update', repo.update)
-router.get('/project/:project', repo.getApp)
+/**
+ * GET /api/repo
+ */
+router.get('/', (req, res, next) => {
+  repo
+    .getRepo()
+    .then(data => res.json({ data }))
+    .catch(err => next(err))
+})
+
+/**
+ * GET /api/repo/update
+ */
+router.get('/update', (req, res, next) => {
+  repo
+    .update()
+    .then(data => {
+      res.json({ data })
+    })
+    .catch(error => {
+      next(error)
+    })
+})
+
+/**
+ * GET /api/repo/list
+ */
+router.get('/projects', (req, res, next) => {
+  repo
+    .getProjects()
+    .then(data => res.json({ data }))
+    .catch(err => next(err))
+})
+
+/**
+ * GET /api/repo/project/:project
+ */
+router.get('/projects/:project', (req, res, next) => {
+  repo
+    .getProject(req.params.project)
+    .then(data => res.json({ data }))
+    .catch(err => next(err))
+})
 
 module.exports = router
