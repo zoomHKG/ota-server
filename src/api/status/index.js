@@ -5,6 +5,9 @@ const status = require('./status.controller')
 // const logger = system.getLogger()
 const router = express.Router()
 
+/**
+ * GET /api/status/cpus
+ */
 router.get('/cpus', status.getCpuInfo)
 
 module.exports = router

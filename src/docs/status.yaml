@@ -1,0 +1,28 @@
+definitions:
+  CPU:
+    title: CPU
+    type: object
+    properties:
+      model:
+        type: string
+        description: Model of the CPU
+      speed:
+        type: integer
+        format: int32
+        description: Clock speed of CPU
+/status/cpus:
+  get:
+    summary: Get CPU info of server.
+    description: Returns CPUs.
+    produces:
+      - application/json
+    tags:
+      - Status
+    responses:
+      200:
+        description: An array of CPUs
+        schema:
+          title: CPUs
+          type: array
+          items:
+            $ref: '#/definitions/CPU'
