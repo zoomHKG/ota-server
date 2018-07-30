@@ -3,7 +3,9 @@ const ota = require('./ota.controller')
 
 const router = express.Router()
 
-// router.get('/', )
+/**
+ * GET /api/ota/:project
+ */
 router.get('/:project', ota.getApp)
 
 module.exports = router
