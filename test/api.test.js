@@ -37,18 +37,6 @@ describe('#API', () => {
     })
   })
   describe('#status', () => {
-    it('should return ok', (done) => {
-      chai
-        .request(api)
-        .get(status)
-        .then(res => {
-          expect(res).to.have.status(200)
-          // chai.assert.isObject(res.body, 'Body should be an Object')
-          expect(res.body).to.be.an('object')
-          expect(res.body.data).to.be.eq('OK')
-          done()
-        })
-    })
     it('should return CPU Arrays', (done) => {
       chai
         .request(api)
