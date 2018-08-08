@@ -1,0 +1,34 @@
+image: node:latest
+
+cache:
+  paths:
+  - node_modules/
+
+stages:
+  - init
+  - test
+  # - production
+
+job1:
+  stage: init
+  script:
+    - "ls -l"
+    - npm install
+
+test:
+  stage: test
+  script: 
+    - npm run test:coverage
+    - npm run codecov
+
+# production:
+#   type: deploy
+#   stage: production
+#   image: ruby:latest
+#   script:
+#     - apt-get update -qy
+#     - apt-get install -y ruby-dev
+#     - gem install dpl
+#     - dpl --provider=heroku --app=my-first-nodejs --api-key=XXXXXXXXXX
+#   only:
+#     - maste
