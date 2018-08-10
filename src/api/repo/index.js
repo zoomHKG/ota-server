@@ -28,11 +28,11 @@ router.get('/update', (req, res, next) => {
 })
 
 /**
- * GET /api/repo/list
+ * GET /api/repo/projects
  */
 router.get('/projects', (req, res, next) => {
   repo
-    .getProjects()
+    .getProjects(req.query)
     .then(data => res.json({ data }))
     .catch(err => next(err))
 })

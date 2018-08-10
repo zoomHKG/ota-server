@@ -8,14 +8,16 @@ exports.getRepo = () =>
     resolve(repo.get())
   })
 
-exports.getProjects = () =>
+exports.getProjects = query =>
   new Promise((resolve, reject) => {
-    const proj = repo.getProjects()
-    const projects = Object.keys(proj).map(p => ({
-      name: p,
-      ...proj[p]
-    }))
-    resolve(projects)
+    if (query.search) {
+      repo
+        .search(query.search)
+        .then(data => resolve(data))
+        .catch(err => reject(Boom.failedDependency(err.message)))
+    } else {
+      resolve(repo.getProjects())
+    }
   })
 
 exports.getProject = (project) =>
