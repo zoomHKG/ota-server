@@ -8,4 +8,8 @@ module.exports = app => {
   app.use('/api/status', statusRoute)
   app.use('/api/repo', repoRoute)
   app.use('/api/ota', otaRoute)
+
+  app.get('/', (req, res) => {
+    res.redirect('/docs')
+  })
 }
