@@ -39,7 +39,9 @@ class Repository {
                   ]
                 })
               })
-              .catch(() => this.index = null)
+              .catch(() => {
+                this.index = null
+              })
             resolve(this.projects)
           } catch (err) {
             reject(err)
@@ -67,7 +69,7 @@ class Repository {
 
   // TODO: improve local search
   localSearch (project) {
-    return this.projects.filter(p => p.name.includes(project) )
+    return this.projects.filter(p => p.name.includes(project))
   }
 
   search (project) {
@@ -77,9 +79,9 @@ class Repository {
         this.index
           .search(project)
           .then(data => resolve(data.hits || []))
-          .catch(err => resolve(this.localSearch(project)))
+          .catch(() => resolve(this.localSearch(project)))
       } else {
-        resolve(this.localSearch(project))        
+        resolve(this.localSearch(project))
       }
     })
   }
