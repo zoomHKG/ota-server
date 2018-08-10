@@ -92,7 +92,6 @@ definitions:
         description: Name of project to search.
         required: false
         type: string
-        examle: alexa
     responses:
       200:
         description: An array of projects
