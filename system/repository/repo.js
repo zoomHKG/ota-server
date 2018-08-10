@@ -10,7 +10,7 @@ class Repository {
   constructor (props) {
     this.props = props
     this.projects = null
-    this.searchClient = algoliasearch('WXINO9XF4F', '7a379b38111a8560eba67a5784e5e59c1')
+    this.searchClient = algoliasearch('WXINO9XF4F', '7a379b38111a8560eba67a5784e5e59c')
     this.index = this.searchClient.initIndex('iot-apps')
   }
 
